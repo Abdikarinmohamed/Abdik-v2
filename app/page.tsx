@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import ExperienceSection from "./components/ExperienceSection";
 import ProjectsSection from "./components/ProjectsSection";
 
@@ -39,11 +38,12 @@ const socialLinks = [
     ),
   },
   {
-    label: "Resume",
-    href: "#contact",
+    label: "Download resume",
+    href: "/AbdikarinResume.pdf",
+    download: true,
     icon: (
       <svg aria-hidden="true" viewBox="0 0 24 24">
-        <path d="M15.23 3.9a2.12 2.12 0 0 1 3 3L8.96 16.17 5 17.25l1.08-3.96 9.15-9.39Zm1.4 1.4-8.75 8.99-.27 1.01 1.01-.27 8.79-8.79a.12.12 0 0 0 0-.17l-.6-.6a.12.12 0 0 0-.18 0ZM4 20h16v2H4v-2Z" />
+        <path d="M6.75 2h7.08L20 8.17v13.08A2.75 2.75 0 0 1 17.25 24H6.75A2.75 2.75 0 0 1 4 21.25V4.75A2.75 2.75 0 0 1 6.75 2Zm6.08 2H6.75A.75.75 0 0 0 6 4.75v16.5c0 .41.34.75.75.75h10.5c.41 0 .75-.34.75-.75V9.17L12.83 4ZM8 12h8v2H8v-2Zm0 4h8v2H8v-2Zm0-8h3v2H8V8Z" />
       </svg>
     ),
   },
@@ -177,9 +177,10 @@ export default function Home() {
   return (
     <main className="site-shell">
       <nav className="navbar" aria-label="Primary navigation">
-        <Link className="brand" href="/">
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        <a className="brand" href="/">
           Abdikarin Mohamed
-        </Link>
+        </a>
         <div className="nav-links">
           {navItems.map((item) => (
             <a key={item.label} href={item.href}>
@@ -193,6 +194,7 @@ export default function Home() {
               key={link.label}
               href={link.href}
               aria-label={link.label}
+              download={link.download}
               target={isExternalLink(link.href) ? "_blank" : undefined}
               rel={isExternalLink(link.href) ? "noreferrer" : undefined}
             >
