@@ -69,30 +69,3 @@ Lint the project:
 npm run lint
 ```
 
-## Project Structure
-
-```text
-app/
-  components/
-    ExperienceSection.tsx
-    ProjectsSection.tsx
-  globals.css
-  layout.tsx
-  page.tsx
-public/
-  image.png
-  CallRecover.png
-  Port1.png
-```
-
-## Notes
-
-- Main page content lives in `app/page.tsx`.
-- Experience tabs live in `app/components/ExperienceSection.tsx`.
-- Project carousel and cards live in `app/components/ProjectsSection.tsx`.
-- Global styling lives in `app/globals.css`.
-- Static images are served from `public/`.
-
-## Deployment
-
-This is a standard Next.js app and can be deployed on Vercel or any platform that supports Next.js.
